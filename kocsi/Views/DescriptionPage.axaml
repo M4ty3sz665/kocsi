@@ -1,0 +1,32 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="kocsi.DescriptionPage">
+
+	<Grid RowDefinitions="Auto, *" Margin="40">
+		<Button Grid.Row="0" Content="← Vissza a listához" Command="{Binding BackCommand}" Margin="0,0,0,20"/>
+
+		<Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Padding="30" HorizontalAlignment="Center" VerticalAlignment="Top">
+			<StackPanel Spacing="15" MinWidth="300">
+				<TextBlock Text="Jármű Adatlap" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+				<Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto">
+					
+					<TextBlock Grid.Row="0" Grid.Column="0" Text="Márka:" FontWeight="Bold" Margin="0,0,10,0"/>
+					<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Brand}"/>
+
+					<TextBlock Grid.Row="1" Grid.Column="0" Text="Modell:" FontWeight="Bold" Margin="0,10,10,0"/>
+					<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Margin="0,10,0,0"/>
+
+					<TextBlock Grid.Row="2" Grid.Column="0" Text="Évjárat:" FontWeight="Bold" Margin="0,10,10,0"/>
+					<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Year}" Margin="0,10,0,0"/>
+
+					<TextBlock Grid.Row="3" Grid.Column="0" Text="Rendszám:" FontWeight="Bold" Margin="0,10,10,0"/>
+					<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding LicensePlate}" Margin="0,10,0,0"/>
+				</Grid>
+			</StackPanel>
+		</Border>
+	</Grid>
+</UserControl>

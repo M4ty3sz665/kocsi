@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="100"
+             x:Class="kocsi.CarCard"> <!-- Figyelj a Class névre! -->
+
+	<Border BorderBrush="#DDDDDD" BorderThickness="2" CornerRadius="8" Padding="10" Background="#F9F9F9">
+		<Grid ColumnDefinitions="*, Auto">
+			
+			<!-- ADATOK -->
+			<StackPanel Grid.Column="0" VerticalAlignment="Center">
+				<StackPanel Orientation="Horizontal" Spacing="5">
+					<TextBlock Text="{Binding Brand}" FontWeight="Bold" FontSize="16"/>
+					<TextBlock Text="{Binding Model}" FontSize="16"/>
+				</StackPanel>
+				<TextBlock Text="{Binding LicensePlate}" FontStyle="Italic" Foreground="Gray"/>
+				<TextBlock Text="{Binding Year}" Foreground="Gray"/>
+			</StackPanel>
+
+			<!-- GOMBOK -->
+			<StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+				<Button Content="Részletek" Command="{Binding DescriptionCommand}"/>
+				<Button Content="Törlés" Command="{Binding RemoveCommand}" Background="#FFCCCC"/>
+			</StackPanel>
+		</Grid>
+	</Border>
+</UserControl>
